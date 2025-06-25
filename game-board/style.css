@@ -26,6 +26,32 @@ body {
   color: white;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.header .clear-cache {
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  background-color: #dbdbdb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 30px;
+  line-height: 1;
+}
+
+.header .clear-cache:hover {
+  background-color: #555;
+}
+
 .board-container {
   position: relative;
   display: inline-block;

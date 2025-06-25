@@ -10,14 +10,23 @@
 
 <body>
   <div class="select-screen">
-    <h1>Select Game Side</h1>
+    <div class="header">
+      <h1>Select Game Side</h1>
+      <button class="clear-cache" onclick="clearTicks()">🧹</button>
+    </div>
     <button onclick="location.href='game.html?side=a'">🅰️ Play Side A</button>
     <button onclick="location.href='game.html?side=b'">🅱️ Play Side B</button>
   </div>
 
+
   <script>
     function startGame(side) {
       window.location.href = `game.html?side=${side}`;
+    }
+    
+    function clearTicks() {
+      localStorage.removeItem('ticks_a');
+      localStorage.removeItem('ticks_b');
     }
   </script>
 </body>
