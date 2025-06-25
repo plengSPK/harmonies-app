@@ -91,6 +91,8 @@ button {
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.2s ease;
+  touch-action: manipulation; /* ✅ Prevents double-tap zoom on iOS */
+  -webkit-tap-highlight-color: transparent; /* Optional: removes grey flash */
 }
 
 button:hover {
