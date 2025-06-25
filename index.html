@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harmonies Card Draw App</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1>Harmonies Card Draw App</h1>
+
+    <!-- OPTIONAL SETTINGS -->
+    <!-- <div class="settings">
+        <label><input type="checkbox" id="show-label" checked> Show last drawn label</label>
+        <label><input type="checkbox" id="show-counts" checked> Show deck stats</label>
+        <label><input type="checkbox" id="show-discard" checked> Show discard list</label>
+    </div> -->
+
+    <!-- DYNAMIC DISPLAY -->
+    <div id="status-container">
+        <div class="status-row">
+            <span>Main Deck: <strong id="main-count">9</strong></span>
+            <span>Discard Pile: <strong id="discard-count">0</strong></span>
+            <span>Last Drawn: <strong id="last-card">None</strong></span>
+        </div>
+    </div>
+
+    <!-- Card flip container -->
+    <div class="card-container">
+        <img id="card-image" src="images/card-back.jpg" alt="card" />
+    </div>
+
+    <div class="buttons">
+        <div class="button-group">
+            <button class="primary" onclick="drawCard()">🎮 Draw Card</button>
+        </div>
+
+        <div class="button-group">
+            <button onclick="shuffle()">🔁 Shuffle / Reset Deck</button>
+            <button onclick="randomizeMainDeck()">🎲 Randomize Main Deck</button>
+        </div>
+    </div>
+
+    <!-- Discard Preview -->
+    <div id="discard-list-container">
+        <h3>Discarded Cards</h3>
+        <div id="discard-thumbnails" class="thumbnail-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
