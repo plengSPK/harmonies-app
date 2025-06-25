@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Board Side</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="select-screen">
+    <h1>Select Game Side</h1>
+    <button onclick="location.href='game.html?side=a'">🅰️ Play Side A</button>
+    <button onclick="location.href='game.html?side=b'">🅱️ Play Side B</button>
+  </div>
+
+  <script>
+    function startGame(side) {
+      window.location.href = `game.html?side=${side}`;
+    }
+  </script>
+</body>
+</html>

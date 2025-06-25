@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Relative Clicks</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    #my-image {
+      width: 100%;
+      max-width: 768px;
+      cursor: crosshair;
+    }
+
+    ul {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+
+    li {
+      font-family: monospace;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Click on the Image to Log Relative Positions</h2>
+  <img id="my-image" src="assets/side-b.jpg" alt="Board Image">
+  
+  <ul id="positions-list"></ul>
+
+  <script>
+    const image = document.getElementById("my-image");
+    const list = document.getElementById("positions-list");
+
+    image.addEventListener("click", function (e) {
+      const rect = image.getBoundingClientRect();
+      const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
+      const yPercent = ((e.clientY - rect.top) / rect.height) * 100;
+
+      const item = document.createElement("li");
+      item.textContent = `{ top: "${yPercent.toFixed(2)}%", left: "${xPercent.toFixed(2)}%" },`;
+      list.appendChild(item);
+    });
+  </script>
+
+</body>
+</html>
